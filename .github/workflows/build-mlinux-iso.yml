@@ -30,6 +30,7 @@ jobs:
             --binary-images iso-hybrid \
             --archive-areas "main contrib non-free non-free-firmware" \
             --debian-installer false \
+            --security false \
             --bootappend-live "boot=live components username=mlinux hostname=mlinux"
       - name: Build bootable ISO
         run: sudo lb build
