@@ -16,14 +16,11 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 180
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
       - name: Install live-build
         run: |
           sudo apt-get update
           sudo apt-get install -y live-build debootstrap xorriso squashfs-tools
-
       - name: Configure MLinux
         run: |
           lb config \
@@ -34,26 +31,15 @@ jobs:
             --archive-areas "main contrib non-free non-free-firmware" \
             --debian-installer false \
             --bootappend-live "boot=live components username=mlinux hostname=mlinux"
-
-      - name: Add MLinux packages
-        run: |
-          mkdir -p config/package-lists config/includes.chroot/etc/skel
-          cp config/package-lists/mlinux.list.chroot config/package-lists/
-          cp config/includes.chroot/etc/os-release config/includes.chroot/etc/
-          cp config/includes.chroot/etc/skel/.profile config/includes.chroot/etc/skel/
-
       - name: Build bootable ISO
         run: sudo lb build
-
       - name: Rename ISO
         run: |
           ISO="$(find . -maxdepth 1 -type f -name '*.hybrid.iso' -print -quit)"
           test -n "$ISO"
           mv "$ISO" MLinux-amd64.iso
           sha256sum MLinux-amd64.iso > MLinux-amd64.iso.sha256
-
-      - name: Upload ISO artifact
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: MLinux-amd64-ISO
           path: |
