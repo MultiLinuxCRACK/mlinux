@@ -11,7 +11,6 @@ lightdm-gtk-greeter
 network-manager
 network-manager-gnome
 sudo
- firefox-esr
 firefox-esr
 firefox-esr-l10n-tr
 fonts-noto
@@ -20,7 +19,7 @@ gvfs
 gvfs-backends
 udisks2
 dbus-x11
-policykit-1
+polkitd
 pipewire
 wireplumber
 alsa-utils
@@ -30,6 +29,6 @@ git
 nano
 vim-tiny
 htop
-neofetch
+fastfetch
 xterm
 xfce4-terminal
