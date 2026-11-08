@@ -1,0 +1,9 @@
+NAME="MLinux"
+PRETTY_NAME="MLinux - Multi Script Linux"
+ID=mlinux
+ID_LIKE=debian
+VERSION="0.1"
+VERSION_ID="0.1"
+VERSION_CODENAME="preview"
+HOME_URL="https://github.com/MultiLinuxCRACK/mlinux"
+SUPPORT_URL="https://github.com/MultiLinuxCRACK/mlinux/issues"
