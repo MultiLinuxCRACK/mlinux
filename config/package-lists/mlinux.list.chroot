@@ -1,0 +1,34 @@
+# MLinux desktop base
+linux-image-amd64
+live-boot
+live-config
+live-config-systemd
+systemd-sysv
+xfce4
+xfce4-goodies
+lightdm
+lightdm-gtk-greeter
+network-manager
+network-manager-gnome
+sudo
+ firefox-esr
+firefox-esr
+firefox-esr-l10n-tr
+fonts-noto
+fonts-noto-color-emoji
+gvfs
+gvfs-backends
+udisks2
+dbus-x11
+policykit-1
+pipewire
+wireplumber
+alsa-utils
+curl
+wget
+git
+nano
+vim-tiny
+htop
+neofetch
+xterm
